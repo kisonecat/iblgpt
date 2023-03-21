@@ -1,0 +1,66 @@
+/* Style the description list container */
+dl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style the term (speaker) */
+dt {
+  font-weight: bold;
+  margin: 0;
+  opacity: 0.5;
+  font-size: 75%;
+}
+
+/* Style the definition (message) */
+dd {
+  display: inline-block;
+  background-color: #f3f3f3;
+  padding: 10px;
+  margin: 0;
+  border-radius: 10px;
+  min-width: 24px;
+  min-height: 24px;
+  position: relative;
+}
+
+dd:after {
+  content: "";
+  position:absolute;
+  margin-top:-6px;
+  margin-left:-5px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #f3f3f3;
+  top: -4px;
+}
+
+@keyframes bounce {
+    0% {margin-left: 0;}
+    50% { margin-left: 6pt; }			   
+    100% {margin-left: 0;}
+} 
+ 
+dd:empty:before {    
+  animation: bounce 1s ease infinite;
+  content: '...';
+}
+
+dd.student:after { right: 10px; }
+dd.teacher:after { left: 10px; }
+
+/* Style the term and definition for the chat transcript format */
+dl dt {
+  color: #007bff;
+}
+
+dl dd {
+  align-self: flex-start;
+  max-width: 95%;
+}
+
+dd.student, dt.student {
+    margin-left: auto;
+}
+

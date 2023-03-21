@@ -1,0 +1,64 @@
+main > div {
+    flex: 1;
+    padding: 6pt;
+}
+
+main .chat-panel {
+    flex-grow: 1;
+}
+
+main .task-panel {
+    border-right: solid 1px black;
+    position: sticky;
+    align-self: flex-start;
+    /*min-height: calc(100vh - 12pt);*/
+    min-height: calc(100vh - 12pt);
+    top: 0;
+    padding: 6pt;
+    padding-right: 12pt;
+    box-shadow: inset -8px 0px 12px -12px rgba(0,0,0,0.5);
+}
+
+main .task-panel {
+    flex-grow: 0;
+}
+
+#openai {
+    font-family: monospace;
+}
+
+input[type="text"]
+{
+    margin: 6pt;
+    padding: 1pt;
+}
+
+
+/****************************************************************/
+
+#user-form {
+    display: flex;
+    border-top: solid 1px #777;
+    padding-top: 12pt;
+    padding-bottom: 6pt;
+    padding-right: 6pt;
+    padding-left: 6pt;
+}
+
+#user-form input[type="text"] {
+    flex-grow: 1;
+    padding: 6pt;
+    margin: 0;
+    font-size: 12pt;
+}
+
+#user-form button {
+    flex-grow: 0;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+    margin-left: 6pt;
+    padding: 6pt;
+    height: 36pt;
+    /*padding: 1em;*/
+}

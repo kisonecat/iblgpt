@@ -5,10 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   </head>
   <body>
     <header>
-      <h1>Template File of <%= htmlWebpackPlugin.options.title %></h1>
+      <h1>
+	<%= htmlWebpackPlugin.options.title %>
+	<span class="tagline">inquiry-based learning chatbot</span>
+	<button id="button-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+      </h1>
     </header>
+    <main>
+      <div class="task-panel">
+	<h2>Goals</h2>
+      <ul class="task-list">
+	<li id="task-refl">Reflexivity</li>
+	<li id="task-sym">Symmetry</li>
+	<li id="task-trans">Transitivity</li>
+      </ul>
+    </div>
+      <div class="chat-panel">
+	<dl id="transcript"></dl>
+	<div id="user-form">
+	  <input type="text" id="user" name="user" />
+	  <button id="user-submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
+	</div>
+      </div>
+    </main>
+    <div id="openai-form" class="center dialog">
+      <h2>API Key</h2>
+      <p>To use <span class="wordmark"><%= htmlWebpackPlugin.options.title %></span>, an <a href="https://platform.openai.com/account/api-keys">OpenAI API</a> key is required.  Your OpenAI API key is stored in your browser's <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a> and is <strong>only</strong> sent to <code>openai.com</code>.</p> 
+      <p><label for="openai">OpenAI API key: </label>
+      <input type="text" id="openai" name="openai" placeholder="An OpenAI API key"/></p>
+      <span style="float: right;" id="openai-error">The OpenAI key didn't work.</span>
+      <p><button id="openai-submit"><i class="fa-solid fa-key"></i> Save API key</button>
+      </p>
+    </div>
   </body>
 </html>

@@ -1,0 +1,22 @@
+ul.task-list {
+    margin: 0;
+    padding: 0;
+}
+
+ul.task-list li
+{
+     list-style: none;
+}
+
+ul.task-list li:before {
+    content: '☐';
+    margin-right: 4pt;
+}
+
+ul.task-list li.done {
+    color: #333;
+}
+
+ul.task-list li.done:before {
+    content:  '☑';
+}
