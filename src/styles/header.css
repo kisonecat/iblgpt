@@ -10,6 +10,10 @@ header .tagline {
     opacity: 0.5;
 }
 
+@media (max-width: 767px) {                  
+    header .tagline { display: none; }
+}
+
 header button {
     float: right;
     line-height: 2em;

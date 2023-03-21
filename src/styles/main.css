@@ -5,6 +5,7 @@ main > div {
 
 main .chat-panel {
     flex-grow: 1;
+    min-width: 0;
 }
 
 main .task-panel {
@@ -47,6 +48,7 @@ input[type="text"]
 
 #user-form input[type="text"] {
     flex-grow: 1;
+    min-width: 0;
     padding: 6pt;
     margin: 0;
     font-size: 12pt;
