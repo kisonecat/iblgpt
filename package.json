@@ -1,12 +1,14 @@
 {
 	"name": "iblgpt",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "ChatGPT client with MathJax",
 	"main": "index.js",
 	"scripts": {
-		"build": "webpack",
-		"dev": "webpack serve",
-		"test": "echo \"Error: no test specified\" && exit 1"
+	  "build": "webpack",
+	  "predeploy": "npm build && echo -ne iblgpt.xyz > ./dist/CNAME",
+	  "deploy": "gh-pages -d dist",
+	  "dev": "webpack serve",
+	  "test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],
 	"author": "Jim Fowler <fowler@math.osu.edu>",
@@ -17,6 +19,7 @@
 		"babel-loader": "^9.1.0",
 		"css-loader": "^6.7.3",
 		"file-loader": "^6.2.0",
+		"gh-pages": "^5.0.0",
 		"html-webpack-plugin": "^5.5.0",
 		"style-loader": "^3.3.1",
 		"webpack": "^5.76.2",
