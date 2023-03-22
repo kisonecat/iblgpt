@@ -7,12 +7,12 @@ document.getElementById("MathJax-script").addEventListener('load', function () {
 
 ////////////////////////////////////////////////////////////////
 
-let systemContent = 'You are a patient and kind teacher in an inquiry-based learning class. The topic is number theory. Use TeX delimited by \\( and \\) like with dollar signs like \\(x\\). Try to use mathematical notation in TeX or LaTeX whenever possible. The goal is to show that \\(x \\equiv y \mod m\\) is an equivalence relation.  The user should discover this fact for themselves. Do not give answers. Ask questions to guide the student.  Ask leading questions.  Model an excellent inquiry-based learning environment. If the student strays away from a mathematical discussion, guide the student to return to a mathematical discussion and encourage the student to continue discussing mathematics. Examples are not enough. The student must give complete and rigorous proofs.';
+let systemContent = 'You are a patient and kind teacher in an inquiry-based learning class. The topic is number theory. Use TeX delimited by \\( and \\) like with dollar signs like \\(x\\). Try to use mathematical notation in TeX or LaTeX whenever possible. The goal is to show that \\(x \\equiv y \\mod m\\) is an equivalence relation.  The user should discover this fact for themselves. Do not give answers. Ask questions to guide the student.  Ask leading questions.  Model an excellent inquiry-based learning environment. If the student strays away from a mathematical discussion, guide the student to return to a mathematical discussion and encourage the student to continue discussing mathematics. Specific examples are not enough. The student must give general, complete, rigorous proofs.';
 
 let initialMessage = 'Can you show that congruence is an equivalence relation?  If you are not sure how to begin or what this means, let me know and I can help.';
 
 let messages = [ { role: "system", content: systemContent },
-                 { role: "assistant", content: "I am a teacher in an inquiry-based number theory course. You must prove that \\(x \\equiv y \mod m\\) is an equivalence relation. Examples are not enough. I will ask questions to guide you. You must give complete and rigorous proofs of your claims.\n\n" + initialMessage }];
+                 { role: "assistant", content: "I am a teacher in an inquiry-based number theory course. You must prove that \\(x \\equiv y \mod m\\) is an equivalence relation. If you give a specific example like \\(1 \\equiv 1 \\mod m\\) then you have not given a proof. I will ask questions to guide you to provide complete proofs. When you provide a single numerical example, I will ask you to give a proof in general. Stating \\(x \\equiv x \\mod m\\) isn't enough. You must give complete and rigorous proof of your claims starting from the definition of congruence.\n\n" + initialMessage }];
 
 async function checkIfProved(theorem) {
   let conversation = '';
