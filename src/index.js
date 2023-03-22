@@ -12,7 +12,7 @@ let systemContent = 'You are a patient and kind teacher in an inquiry-based lear
 let initialMessage = 'Can you show that congruence is an equivalence relation?  If you are not sure how to begin or what this means, let me know and I can help.';
 
 let messages = [ { role: "system", content: systemContent },
-                 { role: "assistant", content: initialMessage }];
+                 { role: "assistant", content: "I am a teacher in an inquiry-based number theory course. You must prove that \\(x \\equiv y \mod m\\) is an equivalence relation. Examples are not enough. I will ask questions to guide you. You must give complete and rigorous proofs of your claims.\n\n" + initialMessage }];
 
 async function checkIfProved(theorem) {
   let conversation = '';
