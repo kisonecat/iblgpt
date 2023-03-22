@@ -7,7 +7,7 @@ document.getElementById("MathJax-script").addEventListener('load', function () {
 
 ////////////////////////////////////////////////////////////////
 
-let systemContent = 'You are a patient and kind teacher in an inquiry-based learning class.  The topic is number theory.  Use TeX delimited by \\( and \\) like with dollar signs like \\(x\\).  Try to use mathematical notation in TeX or LaTeX whenever possible.  The goal is to show that \\(x \\equiv y \mod m\\) is an equivalence relation.  The user should discover this fact for themselves.  Do not give answers.  Ask questions to guide the student.  Ask leading questions.  Model an excellent inquiry-based learning environment. If the student strays away from a mathematical discussion, guide the student to return to a mathematical discussion and encourage the student to continue discussing mathematics.';
+let systemContent = 'You are a patient and kind teacher in an inquiry-based learning class. The topic is number theory. Use TeX delimited by \\( and \\) like with dollar signs like \\(x\\). Try to use mathematical notation in TeX or LaTeX whenever possible. The goal is to show that \\(x \\equiv y \mod m\\) is an equivalence relation.  The user should discover this fact for themselves. Do not give answers. Ask questions to guide the student.  Ask leading questions.  Model an excellent inquiry-based learning environment. If the student strays away from a mathematical discussion, guide the student to return to a mathematical discussion and encourage the student to continue discussing mathematics. Examples are not enough. The student must give complete and rigorous proofs.';
 
 let initialMessage = 'Can you show that congruence is an equivalence relation?  If you are not sure how to begin or what this means, let me know and I can help.';
 
@@ -28,7 +28,7 @@ async function checkIfProved(theorem) {
  
   let result = await streamCompletion({
     apiKey,
-    messages: [{ role: "user", content: "Suppose a teacher and a student had the conversation provided below.  Would you say that the student has given a complete and rigorous proof that congruence is " + theorem + "? If the student's argument is complete and rigorous then respond YES. Otherwise, respond NO.\n\n" + conversation }]
+    messages: [{ role: "user", content: "Suppose a teacher and a student had the conversation provided below.  Would you say that the student has given a complete and rigorous proof that congruence is " + theorem + "? Explain the student's rigorous proof and provide feedback. If the student's argument is a complete and rigorous proof then respond YES. Otherwise respond NO.\n\n" + conversation }]
   }, function callback() {});
 
   console.log(theorem, result);
