@@ -1,6 +1,6 @@
 {
 	"name": "iblgpt",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "ChatGPT client with MathJax",
 	"main": "index.js",
 	"scripts": {

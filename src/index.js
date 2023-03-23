@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', async function () {
       }, function callback(result) {
         appendToResponse(ddStudent, result);
       });
-      messages.push({ role: "user", content: "Suppose the student said: " + fromStudent + "\n\nHow might a teacher respond?  Use TeX. Begin with your response with the word \"Teacher:\"" });
+      messages.push({ role: "user", content: "Suppose the student said: " + fromStudent + "\n\nHow might a teacher respond?  Use TeX with \\( and \\). Begin with your response with the word \"Teacher:\"" });
     } else {
       appendToResponse(ddStudent, text);
-      messages.push({ role: "user", content: "Suppose the student said: " + fromStudent + "\n\nHow might a teacher respond?  Use TeX. Begin with your response with the word \"Teacher:\"" });
+      messages.push({ role: "user", content: "Suppose the student said: " + fromStudent + "\n\nHow might a teacher respond?  Use TeX with \\( and \\). Begin with your response with the word \"Teacher:\"" });
     }
 
     finishResponse(ddStudent);
