@@ -11,7 +11,7 @@ export function streamCompletion(parameters, callback) {
         Authorization: "Bearer " + parameters.apiKey,
       },
       body: JSON.stringify({
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-5.2",
         //"messages": [{ "role": "user", "content": "Say this is a test!" }],
         messages: parameters.messages,
         "temperature": 0.0,
